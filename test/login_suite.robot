@@ -15,6 +15,14 @@ TC1 Loginwithvalidcredentials
     sleep    2
     Click Element    xpath://*[@id="login-form"]/button
 
+TC2 Loginwithinvalipassword
+    [Tags]    VG-HK
+    Click Link    xpath://*[@id="login-nav"]/a
+    sleep    2
+    input text    id:login-username    dino123
+    input text    login-password   dino54321
+    sleep    2
+    Click Element    xpath://*[@id="login-form"]/button
 
 
 *** Keywords ***
