@@ -15,7 +15,7 @@ TC1 Loginwithvalidcredentials
     sleep    2
     Click Element    xpath://*[@id="login-form"]/button
 
-TC2 Loginwithinvalipassword
+TC2 Loginwithinvalidpassword
     [Tags]    VG-HK
     Click Link    xpath://*[@id="login-nav"]/a
     sleep    2
@@ -24,8 +24,22 @@ TC2 Loginwithinvalipassword
     sleep    2
     Click Element    xpath://*[@id="login-form"]/button
 
+TC3 logintestwithinvalidusername
+    invalidusername
+
 
 *** Keywords ***
+invalidusername
+    [Tags]    VG-HK
+    Click Link    xpath://*[@id="login-nav"]/a
+    sleep    2
+    input text    id:login-username    raptors
+    input text    login-password   dino12345
+    sleep    2
+    Click Element    xpath://*[@id="login-form"]/button
+    Wait Until Element Contains    id:login-message
+    ...        Invalid username or password.
 
+    Element Should Be Visible    id:login-message    Invalid username or password.
 
 
