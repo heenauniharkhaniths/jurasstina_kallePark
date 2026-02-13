@@ -47,3 +47,15 @@ Error message "${expected_text}" should be displayed
 
 User should be on the Safari Booking page
     Wait Until Element Is Visible    id=safari-section    timeout=5s
+
+    # --- NYA KEYWORDS FÖR CART/CHECKOUT ---
+User goes to the Shopping Cart
+    Click Element    id=cart-nav
+    Wait Until Element Is Visible    id=cart-section
+
+User clicks Proceed to Checkout
+    Wait Until Element Is Enabled    id=checkout-button    timeout=5s
+    Click Button    id=checkout-button
+
+The Cart should be empty and order confirmed
+    Alert Should Be Present    text=Thank you for your purchase!

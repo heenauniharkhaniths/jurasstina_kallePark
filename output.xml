@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.10 on win32)" generated="2026-02-13T20:59:51.573114" rpa="false" schemaversion="5">
+<suite id="s1" name="Suite3 Safari Bdd" source="C:\Users\Sandi\Desktop\lab-testing-auto\test\suite3_safari_bdd.robot">
+<kw name="Start System" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-13T20:59:55.965809" level="INFO">Opening browser 'firefox' to base url 'file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-13T20:59:55.965809" elapsed="6.811731"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-13T21:00:02.777540" elapsed="0.280080"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome to Jurasstina-Kalle Park</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.057620" elapsed="0.013704"/>
+</kw>
+<status status="PASS" start="2026-02-13T20:59:55.963311" elapsed="7.108013"/>
+</kw>
+<test id="s1-t1" name="TC-301 Successful Safari Booking" line="11">
+<kw name="Given User is on the Safari Booking page" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.079403" elapsed="0.205270"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:03.289233" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.284673" elapsed="0.086250"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.370923" elapsed="0.008269"/>
+</kw>
+<arg>safari-nav</arg>
+<arg>Book Safaris</arg>
+<status status="PASS" start="2026-02-13T21:00:03.071324" elapsed="0.307868"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=safari-section</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.379192" elapsed="0.100112"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:03.071324" elapsed="0.407980"/>
+</kw>
+<kw name="When User enters a valid date &quot;2025-07-15&quot;" owner="safari_keywords" source_name="User enters a valid date &quot;${date}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=safari-date</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.482806" elapsed="0.031718"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=safari-date</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.514524" elapsed="0.318033"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:03.832557" level="INFO">Typing text '2025-07-15' into text field 'id=safari-date'.</msg>
+<arg>id=safari-date</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.832557" elapsed="0.016831"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:03.479304" elapsed="0.370084"/>
+</kw>
+<kw name="And User clicks the Book button" owner="safari_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.859119" elapsed="0.010129"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-13T21:00:03.869248" elapsed="0.270200"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:04.139448" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.139448" elapsed="0.098587"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:03.849388" elapsed="0.388647"/>
+</kw>
+<kw name="Then Success message &quot;Booking Confirmed&quot; should be displayed" owner="safari_keywords" source_name="Success message &quot;${expected_text}&quot; should be displayed">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:04.351695" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-13T21:00:04.351695" level="FAIL">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</msg>
+<arg>id=safari-message</arg>
+<arg>${expected_text}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="FAIL" start="2026-02-13T21:00:04.239540" elapsed="0.309737">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</kw>
+<status status="FAIL" start="2026-02-13T21:00:04.238035" elapsed="0.311242">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</kw>
+<doc>Verifierar att en användare kan boka safari med ett giltigt datum.</doc>
+<tag>bdd</tag>
+<tag>critical</tag>
+<tag>positive</tag>
+<tag>safari</tag>
+<status status="FAIL" start="2026-02-13T21:00:03.071324" elapsed="1.477953">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</test>
+<test id="s1-t2" name="TC-302 Booking Without Date Validation" line="19">
+<kw name="Given User is on the Safari Booking page" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.015440"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:04.574564" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.574564" elapsed="0.070015"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.644579" elapsed="0.004859"/>
+</kw>
+<arg>safari-nav</arg>
+<arg>Book Safaris</arg>
+<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.090314"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=safari-section</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.649438" elapsed="0.019001"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.109315"/>
+</kw>
+<kw name="When User clicks the Book button" owner="safari_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.669536" elapsed="0.009582"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.679118" elapsed="0.272481"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:04.951599" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:04.951599" elapsed="0.054299"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:04.669536" elapsed="0.336362"/>
+</kw>
+<kw name="Then Error message &quot;Please select a date&quot; should be displayed" owner="safari_keywords" source_name="Error message &quot;${expected_text}&quot; should be displayed">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:05.129529" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-13T21:00:05.129529" level="FAIL">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</msg>
+<arg>id=safari-message</arg>
+<arg>${expected_text}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="FAIL" start="2026-02-13T21:00:05.005898" elapsed="0.123631">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</kw>
+<status status="FAIL" start="2026-02-13T21:00:05.005898" elapsed="0.123631">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</kw>
+<doc>Verifierar att systemet stoppar bokning om datum saknas.</doc>
+<tag>bdd</tag>
+<tag>negative</tag>
+<tag>safari</tag>
+<status status="FAIL" start="2026-02-13T21:00:04.559124" elapsed="0.570405">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
+</status>
+</test>
+<test id="s1-t3" name="TC-303 Navigate Via Homepage Card" line="26">
+<kw name="Given User is on the Home page" owner="safari_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:05.129529" level="INFO">Clicking element 'xpath=//a[text()='Home']'.</msg>
+<arg>xpath=//a[text()='Home']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-13T21:00:05.129529" elapsed="0.076513"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=home-section</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:05.206042" elapsed="0.018779"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-13T21:00:05.730017" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-13T21:00:05.229355" elapsed="0.500662"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:05.129529" elapsed="0.600488"/>
+</kw>
+<kw name="When User clicks the Safari Card button" owner="safari_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-13T21:00:05.731776" elapsed="0.014998"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<msg time="2026-02-13T21:00:06.139241" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-13T21:00:06.139241" level="FAIL">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
+assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
+#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
+</msg>
+<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="FAIL" start="2026-02-13T21:00:05.746774" elapsed="0.478576">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
+assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
+#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-13T21:00:06.225350" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-02-13T21:00:05.731776" elapsed="0.497427">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
+assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
+#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
+</status>
+</kw>
+<kw name="Then User should be on the Safari Booking page" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="TC-301 Successful Safari Booking (End-to-End)">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<error>
+<value>[Documentation]</value>
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</error>
+<error>
+<value>[Tags]</value>
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</error>
+<kw name="Given User is logged in">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="And User is on the Safari Booking page" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="When User enters a valid date &quot;2025-07-15&quot;" owner="safari_keywords" source_name="User enters a valid date &quot;${date}&quot;">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="And User clicks the Book button" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="Then Success message &quot;Booking Confirmed&quot; should be displayed" owner="safari_keywords" source_name="Success message &quot;${expected_text}&quot; should be displayed">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="When User goes to the Shopping Cart" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="And User clicks Proceed to Checkout" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<kw name="Then The Cart should be empty and order confirmed" owner="safari_keywords">
+<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+</kw>
+<doc>Verifierar navigering via kortet på startsidan.</doc>
+<tag>bdd</tag>
+<tag>navigation</tag>
+<tag>safari</tag>
+<status status="FAIL" start="2026-02-13T21:00:05.129529" elapsed="1.099674">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
+assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
+#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
+</status>
+</test>
+<kw name="Close System" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-13T21:00:06.229203" elapsed="2.900109"/>
+</kw>
+<status status="PASS" start="2026-02-13T21:00:06.229203" elapsed="2.900109"/>
+</kw>
+<doc>Suite 3: Safari Booking System (BDD).
+Testar bokningsflödet för Safari.</doc>
+<status status="FAIL" start="2026-02-13T20:59:51.575133" elapsed="17.554179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="3" skip="0">bdd</stat>
+<stat pass="0" fail="1" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">navigation</stat>
+<stat pass="0" fail="1" skip="0">negative</stat>
+<stat pass="0" fail="1" skip="0">positive</stat>
+<stat pass="0" fail="3" skip="0">safari</stat>
+</tag>
+<suite>
+<stat name="Suite3 Safari Bdd" id="s1" pass="0" fail="3" skip="0">Suite3 Safari Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

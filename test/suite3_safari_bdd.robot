@@ -29,3 +29,17 @@ TC-303 Navigate Via Homepage Card
     Given User is on the Home page
     When User clicks the Safari Card button
     Then User should be on the Safari Booking page
+
+    TC-301 Successful Safari Booking (End-to-End)
+    [Documentation]    Bokar en safari OCH slutför köpet i kassan.
+    [Tags]    critical    positive
+    Given User is logged in
+    And User is on the Safari Booking page
+    When User enters a valid date "2025-07-15"
+    And User clicks the Book button
+    Then Success message "Booking Confirmed" should be displayed
+
+
+    When User goes to the Shopping Cart
+    And User clicks Proceed to Checkout
+    Then The Cart should be empty and order confirmed
