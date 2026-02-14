@@ -1,82 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-09T17:53:22.798396" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-14T20:16:19.393593" rpa="false" schemaversion="5">
 <suite id="s1" name="jurasstina kallePark" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark">
 <suite id="s1-s1" name="Test" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark\test">
 <suite id="s1-s1-s1" name="Login Suite" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark\test\login_suite.robot">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2026-02-09T17:53:23.039795" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
+<msg time="2026-02-14T20:16:19.579636" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
 <arg>http://127.0.0.1:8000/jurap.html</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-09T17:53:23.039458" elapsed="1.564572"/>
+<status status="PASS" start="2026-02-14T20:16:19.579227" elapsed="1.465299"/>
 </kw>
-<test id="s1-s1-s1-t1" name="TC3 logintestwithinvalidusername" line="27">
-<kw name="invalidusername">
+<test id="s1-s1-s1-t1" name="TC1 TestingInputBoxes" line="10">
 <kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2026-02-09T17:53:24.607887" level="INFO">Clicking link 'xpath://*[@id="login-nav"]/a'.</msg>
+<msg time="2026-02-14T20:16:21.047553" level="INFO">Clicking link 'xpath://*[@id="login-nav"]/a'.</msg>
 <arg>xpath://*[@id="login-nav"]/a</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-09T17:53:24.607398" elapsed="0.075417"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-09T17:53:26.684406" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-09T17:53:24.683144" elapsed="2.001937"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-09T17:53:26.686469" level="INFO">Typing text 'raptors' into text field 'id:login-username'.</msg>
-<arg>id:login-username</arg>
-<arg>raptors</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-09T17:53:26.685757" elapsed="0.166029"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-09T17:53:26.853016" level="INFO">Typing text 'dino12345' into text field 'login-password'.</msg>
-<arg>login-password</arg>
-<arg>dino12345</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-09T17:53:26.852437" elapsed="0.121369"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-09T17:53:28.974887" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-09T17:53:26.974024" elapsed="2.001515"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-09T17:53:28.976875" level="INFO">Clicking element 'xpath://*[@id="login-form"]/button'.</msg>
-<arg>xpath://*[@id="login-form"]/button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-09T17:53:28.976069" elapsed="0.116312"/>
-</kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>id:login-message</arg>
-<arg>Invalid username or password.</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2026-02-09T17:53:29.092617" elapsed="2.245026"/>
+<status status="PASS" start="2026-02-14T20:16:21.047028" elapsed="0.063911"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-09T17:53:31.386126" level="INFO">Element 'id:login-message' is displayed.</msg>
-<arg>id:login-message</arg>
-<arg>Invalid username or password.</arg>
+<msg time="2026-02-14T20:16:21.131450" level="INFO">Element 'id:login-username' is displayed.</msg>
+<arg>id:login-username</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-09T17:53:31.337984" elapsed="0.048493"/>
+<status status="PASS" start="2026-02-14T20:16:21.111199" elapsed="0.020532"/>
 </kw>
-<tag>VG-HK</tag>
-<status status="PASS" start="2026-02-09T17:53:24.606842" elapsed="6.779867"/>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>id:login-username</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-14T20:16:21.131928" elapsed="0.018457"/>
 </kw>
-<status status="PASS" start="2026-02-09T17:53:24.604416" elapsed="6.782528"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-14T20:16:26.151452" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-14T20:16:21.150587" elapsed="5.001760"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-02-14T20:16:26.178200" level="INFO">Element 'id:login-password' is displayed.</msg>
+<arg>id:login-password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-14T20:16:26.152910" elapsed="0.025554"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>id:login-password</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-14T20:16:26.178673" elapsed="0.036772"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-14T20:16:29.217122" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-14T20:16:26.215807" elapsed="3.002526"/>
+</kw>
+<status status="PASS" start="2026-02-14T20:16:21.044801" elapsed="8.174634"/>
 </test>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-09T17:53:31.389586" elapsed="2.187254"/>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-02-14T20:16:29.225821" elapsed="2.153151"/>
 </kw>
-<status status="PASS" start="2026-02-09T17:53:22.840344" elapsed="10.736899"/>
+<status status="PASS" start="2026-02-14T20:16:19.428415" elapsed="11.950806"/>
 </suite>
-<status status="PASS" start="2026-02-09T17:53:22.837943" elapsed="10.743973"/>
+<status status="PASS" start="2026-02-14T20:16:19.426431" elapsed="11.956257"/>
 </suite>
-<status status="PASS" start="2026-02-09T17:53:22.804461" elapsed="10.780137"/>
+<status status="PASS" start="2026-02-14T20:16:19.398524" elapsed="11.986788"/>
 </suite>
 <statistics>
 <total>
