@@ -54,6 +54,14 @@ TC6 registrationForm
     Wait Until Element Is Visible    xpath://*[@id="register-form"]/button    10s
     Click Button   xpath://*[@id="register-form"]/button
 
+TC7 Check Dino Alerts
+    Click Element    xpath://*[@data-section='dino-alert-section']
+    Wait Until Element Is Visible    id:dino-alerts-container    10s
+    Sleep    2s
+    ${alerts}=    Get WebElements    css:#dino-alerts-container .alert-item
+    ${alert_count}=    Get Length    ${alerts}
+    Log    Found ${alert_count} alert(s)
+
 
 
 *** Keywords ***
