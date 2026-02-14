@@ -45,6 +45,15 @@ AdminLogin Valid
     [Template]    Login And Logout Template
     rex999    rexpass
 
+TC6 registrationForm
+    Click Link    xpath://*[@id="register-nav"]/a
+    Sleep    2
+    Input Text    id:reg-username     dino123
+    Input Text    id:reg-password     dino12345
+    Sleep    2
+    Wait Until Element Is Visible    xpath://*[@id="register-form"]/button    10s
+    Click Button   xpath://*[@id="register-form"]/button
+
 
 
 *** Keywords ***
