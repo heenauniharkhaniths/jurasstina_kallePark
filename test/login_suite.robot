@@ -62,7 +62,18 @@ TC7 Check Dino Alerts
     ${alert_count}=    Get Length    ${alerts}
     Log    Found ${alert_count} alert(s)
 
+TC8 dropdownTest
+    Click Link    xpath://*[@id="tickets-nav"]/a
+    Select From List By Label    id:ticket-type    Senior
+    Sleep    3s
+    Click Element    id:ticket-category
 
+    Wait Until Element Is Visible    id:ticket-category   15s
+    Select From List By Label  id:ticket-category   Regular Ticket
+    Sleep    3s
+    Clear Element Text    id:ticket-quantity
+    Input Text    id:ticket-quantity    5
+    Click Button    xpath://*[@id="ticket-form"]/button
 
 *** Keywords ***
 invalidusername
