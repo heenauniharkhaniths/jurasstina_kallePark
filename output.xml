@@ -1,378 +1,933 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.12.10 on win32)" generated="2026-02-13T20:59:51.573114" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.12.10 on win32)" generated="2026-02-15T22:56:26.268413" rpa="false" schemaversion="5">
 <suite id="s1" name="Suite3 Safari Bdd" source="C:\Users\Sandi\Desktop\lab-testing-auto\test\suite3_safari_bdd.robot">
+<test id="s1-t1" name="TC-301 Successful Safari Booking" line="11">
 <kw name="Start System" owner="common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-13T20:59:55.965809" level="INFO">Opening browser 'firefox' to base url 'file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html'.</msg>
+<msg time="2026-02-15T22:56:26.498334" level="INFO">Opening browser 'firefox' to base url 'file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-13T20:59:55.965809" elapsed="6.811731"/>
+<status status="PASS" start="2026-02-15T22:56:26.498334" elapsed="6.099931"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-13T21:00:02.777540" elapsed="0.280080"/>
+<status status="PASS" start="2026-02-15T22:56:32.598265" elapsed="0.310241"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-02-15T22:56:32.908506" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Welcome to Jurasstina-Kalle Park</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.057620" elapsed="0.013704"/>
+<status status="PASS" start="2026-02-15T22:56:32.908506" elapsed="0.230481"/>
 </kw>
-<status status="PASS" start="2026-02-13T20:59:55.963311" elapsed="7.108013"/>
+<status status="PASS" start="2026-02-15T22:56:26.498334" elapsed="6.640653"/>
 </kw>
-<test id="s1-t1" name="TC-301 Successful Safari Booking" line="11">
-<kw name="Given User is on the Safari Booking page" owner="safari_keywords">
+<kw name="Given User creates account and logs in" owner="safari_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:56:33.138987" level="INFO">${USER} = safari_sven</msg>
+<var>${USER}</var>
+<arg>safari_sven</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:56:33.138987" level="INFO">${PASS} = longpassword123</msg>
+<var>${PASS}</var>
+<arg>longpassword123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="0.000000"/>
+</kw>
+<kw name="Register New User" owner="register_keywords">
 <kw name="Navigate To Section" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=${nav_id}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.079403" elapsed="0.205270"/>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="0.428845"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:03.289233" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<msg time="2026-02-15T22:56:33.568511" level="INFO">Clicking element 'id=register-nav'.</msg>
 <arg>id=${nav_id}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.284673" elapsed="0.086250"/>
+<status status="PASS" start="2026-02-15T22:56:33.568511" elapsed="0.487414"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${section_header}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.370923" elapsed="0.008269"/>
+<status status="PASS" start="2026-02-15T22:56:34.055925" elapsed="0.213008"/>
+</kw>
+<arg>register-nav</arg>
+<arg>Register</arg>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="1.129946"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=reg-username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:34.268933" elapsed="0.420320"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:34.689253" level="INFO">Typing text 'safari_sven' into text field 'id=reg-username'.</msg>
+<arg>id=reg-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:34.689253" elapsed="0.657181"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:35.346434" level="INFO">Typing text 'longpassword123' into text field 'id=reg-password'.</msg>
+<arg>id=reg-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:35.346434" elapsed="0.647920"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:35.995300" level="INFO">Clicking button 'xpath=//form[@id='register-form']//button'.</msg>
+<arg>xpath=//form[@id='register-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:35.995300" elapsed="1.129661"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=register-message</arg>
+<arg>uccess</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-02-15T22:56:37.126820" elapsed="0.420711"/>
+</kw>
+<arg>Wait Until Element Contains</arg>
+<arg>id=register-message</arg>
+<arg>uccess</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:56:37.124961" elapsed="0.422570"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login-section</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:37.547531" elapsed="1.663623"/>
+</kw>
+<arg>${USER}</arg>
+<arg>${PASS}</arg>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="6.072167"/>
+</kw>
+<kw name="Login To Jurasstina" owner="login_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:39.211154" elapsed="0.424943"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:39.637694" level="INFO">Clicking element 'id=login-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:39.636097" elapsed="0.480902"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:56:40.116999" elapsed="0.209527"/>
+</kw>
+<arg>login-nav</arg>
+<arg>Login</arg>
+<status status="PASS" start="2026-02-15T22:56:39.211154" elapsed="1.115372"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login-username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:40.326526" elapsed="0.422404"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:40.748930" level="INFO">Typing text 'safari_sven' into text field 'id=login-username'.</msg>
+<arg>id=login-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:40.748930" elapsed="0.659867"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:41.408797" level="INFO">Typing text 'longpassword123' into text field 'id=login-password'.</msg>
+<arg>id=login-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:41.408797" elapsed="0.666717"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:42.075514" level="INFO">Clicking button 'xpath=//*[@id="login-form"]/button'.</msg>
+<arg>xpath=//*[@id="login-form"]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:42.075514" elapsed="1.125158"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:43.200672" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-02-15T22:56:48.830602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-105.png"&gt;&lt;img src="selenium-screenshot-105.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:56:48.838355" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="FAIL" start="2026-02-15T22:56:43.200672" elapsed="5.637683">Alert not found in 5 seconds.</status>
+</kw>
+<arg>Handle Alert</arg>
+<arg>ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:56:43.200672" elapsed="5.637683"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:56:48.838355" elapsed="0.211107"/>
+</kw>
+<arg>${USER}</arg>
+<arg>${PASS}</arg>
+<doc>Loggar in med angivet namn och lösenord.</doc>
+<status status="PASS" start="2026-02-15T22:56:39.211154" elapsed="9.838308"/>
+</kw>
+<doc>Registrerar en användare, hanterar redirect och loggar in.</doc>
+<status status="PASS" start="2026-02-15T22:56:33.138987" elapsed="15.910475"/>
+</kw>
+<kw name="And User buys an entrance ticket" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:49.049462" elapsed="0.421839"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:49.472358" level="INFO">Clicking element 'id=tickets-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:49.471301" elapsed="0.477241"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:56:49.948542" elapsed="0.206434"/>
+</kw>
+<arg>tickets-nav</arg>
+<arg>Buy Tickets</arg>
+<status status="PASS" start="2026-02-15T22:56:49.049462" elapsed="1.105514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=ticket-type</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:50.154976" elapsed="0.418692"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:50.573668" level="INFO">Selecting options from selection list 'id=ticket-type' by label Adult.</msg>
+<arg>id=ticket-type</arg>
+<arg>Adult</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:56:50.573668" elapsed="1.863313"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:52.438543" level="INFO">Selecting options from selection list 'id=ticket-category' by label Regular Ticket.</msg>
+<arg>id=ticket-category</arg>
+<arg>Regular Ticket</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:56:52.438543" elapsed="1.861661"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:54.300204" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<arg>id=ticket-quantity</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:54.300204" elapsed="0.651030"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:54.951234" level="INFO">Clicking button 'xpath=//form[@id='ticket-form']//button'.</msg>
+<arg>xpath=//form[@id='ticket-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:54.951234" elapsed="1.167248"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:56.118482" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>text=Item added to cart!</arg>
+<arg>action=ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2026-02-15T22:56:56.118482" elapsed="0.634795"/>
+</kw>
+<doc>Köper biljett och klickar OK på Alert-rutan.</doc>
+<status status="PASS" start="2026-02-15T22:56:49.049462" elapsed="7.703815"/>
+</kw>
+<kw name="And User is on the Safari Booking page" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:56:56.757169" elapsed="0.425203"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:56:57.182372" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:56:57.182372" elapsed="0.495407"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:56:57.677779" elapsed="0.211696"/>
 </kw>
 <arg>safari-nav</arg>
 <arg>Book Safaris</arg>
-<status status="PASS" start="2026-02-13T21:00:03.071324" elapsed="0.307868"/>
+<status status="PASS" start="2026-02-15T22:56:56.753277" elapsed="1.136198"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=safari-section</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.379192" elapsed="0.100112"/>
+<status status="PASS" start="2026-02-15T22:56:57.889475" elapsed="0.423731"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:03.071324" elapsed="0.407980"/>
+<status status="PASS" start="2026-02-15T22:56:56.753277" elapsed="1.559929"/>
 </kw>
-<kw name="When User enters a valid date &quot;2025-07-15&quot;" owner="safari_keywords" source_name="User enters a valid date &quot;${date}&quot;">
+<kw name="When User enters date &quot;2026-03-02&quot;" owner="safari_keywords" source_name="User enters date &quot;${date}&quot;">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=safari-date</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.482806" elapsed="0.031718"/>
+<status status="PASS" start="2026-02-15T22:56:58.313206" elapsed="0.425706"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
 <arg>id=safari-date</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.514524" elapsed="0.318033"/>
+<status status="PASS" start="2026-02-15T22:56:58.738912" elapsed="0.724039"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:03.832557" level="INFO">Typing text '2025-07-15' into text field 'id=safari-date'.</msg>
+<msg time="2026-02-15T22:56:59.462951" level="INFO">Typing text '2026-03-02' into text field 'id=safari-date'.</msg>
 <arg>id=safari-date</arg>
 <arg>${date}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.832557" elapsed="0.016831"/>
+<status status="PASS" start="2026-02-15T22:56:59.462951" elapsed="0.635902"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:03.479304" elapsed="0.370084"/>
+<doc>Fyller i datumfältet. Fungerar för både giltiga och ogiltiga datum.</doc>
+<status status="PASS" start="2026-02-15T22:56:58.313206" elapsed="1.785647"/>
 </kw>
 <kw name="And User clicks the Book button" owner="safari_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:57:00.100064" level="INFO">${btn} = xpath=//form[@id='safari-form']//button</msg>
+<var>${btn}</var>
 <arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:57:00.100064" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.859119" elapsed="0.010129"/>
+<status status="PASS" start="2026-02-15T22:57:00.103877" elapsed="0.423637"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//form[@id='safari-form']//button</arg>
+<arg>${btn}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-02-13T21:00:03.869248" elapsed="0.270200"/>
+<status status="PASS" start="2026-02-15T22:57:00.527514" elapsed="0.725613"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:04.139448" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
-<arg>xpath=//form[@id='safari-form']//button</arg>
+<msg time="2026-02-15T22:57:01.254651" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
+<arg>${btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.139448" elapsed="0.098587"/>
+<status status="PASS" start="2026-02-15T22:57:01.254002" elapsed="1.066561"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:03.849388" elapsed="0.388647"/>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:02.320563" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-02-15T22:57:02.320563" elapsed="0.626975"/>
+</kw>
+<arg>Handle Alert</arg>
+<arg>ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:02.320563" elapsed="0.626975"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:57:00.100064" elapsed="2.847474"/>
 </kw>
 <kw name="Then Success message &quot;Booking Confirmed&quot; should be displayed" owner="safari_keywords" source_name="Success message &quot;${expected_text}&quot; should be displayed">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:02.948581" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-02-15T22:57:08.300632" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-106.png"&gt;&lt;img src="selenium-screenshot-106.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:57:08.300632" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>text=${expected_text}</arg>
+<arg>action=ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="FAIL" start="2026-02-15T22:57:02.948581" elapsed="5.353708">Alert not found in 5 seconds.</status>
+</kw>
+<arg>Alert Should Be Present</arg>
+<arg>text=${expected_text}</arg>
+<arg>action=ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:02.948581" elapsed="5.354321"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:04.351695" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-13T21:00:04.351695" level="FAIL">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</msg>
+<msg time="2026-02-15T22:57:14.238901" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-107.png"&gt;&lt;img src="selenium-screenshot-107.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:57:14.238901" level="FAIL">Element 'id=safari-message' did not get text 'Booking Confirmed' in 5 seconds.</msg>
 <arg>id=safari-message</arg>
 <arg>${expected_text}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="FAIL" start="2026-02-13T21:00:04.239540" elapsed="0.309737">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<status status="FAIL" start="2026-02-15T22:57:08.302902" elapsed="5.938503">Element 'id=safari-message' did not get text 'Booking Confirmed' in 5 seconds.</status>
 </kw>
-<status status="FAIL" start="2026-02-13T21:00:04.238035" elapsed="0.311242">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<arg>Wait Until Element Contains</arg>
+<arg>id=safari-message</arg>
+<arg>${expected_text}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:08.302902" elapsed="5.938503"/>
 </kw>
-<doc>Verifierar att en användare kan boka safari med ett giltigt datum.</doc>
+<status status="PASS" start="2026-02-15T22:57:02.948581" elapsed="11.292824"/>
+</kw>
+<kw name="Close System" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-15T22:57:14.244390" elapsed="3.027719"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:57:14.241405" elapsed="3.037520"/>
+</kw>
+<doc>Positivt test: Bokar med ett framtida datum.</doc>
 <tag>bdd</tag>
 <tag>critical</tag>
 <tag>positive</tag>
 <tag>safari</tag>
-<status status="FAIL" start="2026-02-13T21:00:03.071324" elapsed="1.477953">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<status status="PASS" start="2026-02-15T22:56:26.498334" elapsed="50.780591"/>
 </test>
-<test id="s1-t2" name="TC-302 Booking Without Date Validation" line="19">
-<kw name="Given User is on the Safari Booking page" owner="safari_keywords">
+<test id="s1-t2" name="TC-302 Booking With Past Date" line="21">
+<kw name="Start System" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:17.278925" level="INFO">Opening browser 'firefox' to base url 'file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-15T22:57:17.278925" elapsed="6.585403"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-15T22:57:23.864328" elapsed="0.516284"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-02-15T22:57:24.380612" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome to Jurasstina-Kalle Park</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:57:24.380612" elapsed="0.222323"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:57:17.278925" elapsed="7.324010"/>
+</kw>
+<kw name="Given User creates account and logs in" owner="safari_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:57:24.602935" level="INFO">${USER} = safari_sven</msg>
+<var>${USER}</var>
+<arg>safari_sven</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:57:24.602935" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:57:24.602935" level="INFO">${PASS} = longpassword123</msg>
+<var>${PASS}</var>
+<arg>longpassword123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:57:24.602935" elapsed="0.000000"/>
+</kw>
+<kw name="Register New User" owner="register_keywords">
 <kw name="Navigate To Section" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=${nav_id}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.015440"/>
+<status status="PASS" start="2026-02-15T22:57:24.608527" elapsed="0.436633"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:04.574564" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<msg time="2026-02-15T22:57:25.045160" level="INFO">Clicking element 'id=register-nav'.</msg>
 <arg>id=${nav_id}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.574564" elapsed="0.070015"/>
+<status status="PASS" start="2026-02-15T22:57:25.045160" elapsed="0.498070"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${section_header}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.644579" elapsed="0.004859"/>
+<status status="PASS" start="2026-02-15T22:57:25.543230" elapsed="0.211895"/>
+</kw>
+<arg>register-nav</arg>
+<arg>Register</arg>
+<status status="PASS" start="2026-02-15T22:57:24.608527" elapsed="1.146598"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=reg-username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:25.755125" elapsed="0.420794"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:26.175919" level="INFO">Typing text 'safari_sven' into text field 'id=reg-username'.</msg>
+<arg>id=reg-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:26.175919" elapsed="0.647742"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:26.823661" level="INFO">Typing text 'longpassword123' into text field 'id=reg-password'.</msg>
+<arg>id=reg-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:26.823661" elapsed="0.655817"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:27.479478" level="INFO">Clicking button 'xpath=//form[@id='register-form']//button'.</msg>
+<arg>xpath=//form[@id='register-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:27.479478" elapsed="1.115371"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=register-message</arg>
+<arg>uccess</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-02-15T22:57:28.594849" elapsed="0.423679"/>
+</kw>
+<arg>Wait Until Element Contains</arg>
+<arg>id=register-message</arg>
+<arg>uccess</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:28.594849" elapsed="0.423679"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login-section</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:29.019159" elapsed="1.657773"/>
+</kw>
+<arg>${USER}</arg>
+<arg>${PASS}</arg>
+<status status="PASS" start="2026-02-15T22:57:24.602935" elapsed="6.073997"/>
+</kw>
+<kw name="Login To Jurasstina" owner="login_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:30.678816" elapsed="0.418383"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:31.097199" level="INFO">Clicking element 'id=login-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:31.097199" elapsed="0.488136"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:57:31.585335" elapsed="0.209356"/>
+</kw>
+<arg>login-nav</arg>
+<arg>Login</arg>
+<status status="PASS" start="2026-02-15T22:57:30.678816" elapsed="1.115875"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login-username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:31.794691" elapsed="0.421040"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:32.215731" level="INFO">Typing text 'safari_sven' into text field 'id=login-username'.</msg>
+<arg>id=login-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:32.215731" elapsed="0.652915"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:32.868646" level="INFO">Typing text 'longpassword123' into text field 'id=login-password'.</msg>
+<arg>id=login-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:32.868646" elapsed="0.679473"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:33.548682" level="INFO">Clicking button 'xpath=//*[@id="login-form"]/button'.</msg>
+<arg>xpath=//*[@id="login-form"]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:33.548682" elapsed="1.101286"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:34.649968" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-02-15T22:57:40.464788" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-108.png"&gt;&lt;img src="selenium-screenshot-108.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:57:40.464788" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="FAIL" start="2026-02-15T22:57:34.649968" elapsed="5.814820">Alert not found in 5 seconds.</status>
+</kw>
+<arg>Handle Alert</arg>
+<arg>ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:34.649968" elapsed="5.814820"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:57:40.464788" elapsed="0.212695"/>
+</kw>
+<arg>${USER}</arg>
+<arg>${PASS}</arg>
+<doc>Loggar in med angivet namn och lösenord.</doc>
+<status status="PASS" start="2026-02-15T22:57:30.676932" elapsed="10.000551"/>
+</kw>
+<doc>Registrerar en användare, hanterar redirect och loggar in.</doc>
+<status status="PASS" start="2026-02-15T22:57:24.602935" elapsed="16.074548"/>
+</kw>
+<kw name="And User buys an entrance ticket" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:40.679000" elapsed="0.418536"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:41.097536" level="INFO">Clicking element 'id=tickets-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:41.097536" elapsed="0.479787"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:57:41.577323" elapsed="0.207222"/>
+</kw>
+<arg>tickets-nav</arg>
+<arg>Buy Tickets</arg>
+<status status="PASS" start="2026-02-15T22:57:40.679000" elapsed="1.105545"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=ticket-type</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:41.784545" elapsed="0.419240"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:42.204315" level="INFO">Selecting options from selection list 'id=ticket-type' by label Adult.</msg>
+<arg>id=ticket-type</arg>
+<arg>Adult</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:57:42.204315" elapsed="1.854295"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:44.059166" level="INFO">Selecting options from selection list 'id=ticket-category' by label Regular Ticket.</msg>
+<arg>id=ticket-category</arg>
+<arg>Regular Ticket</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:57:44.059166" elapsed="1.862380"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:45.922316" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<arg>id=ticket-quantity</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:45.922316" elapsed="0.659650"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:46.581966" level="INFO">Clicking button 'xpath=//form[@id='ticket-form']//button'.</msg>
+<arg>xpath=//form[@id='ticket-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:46.581966" elapsed="1.180450"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:47.762416" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>text=Item added to cart!</arg>
+<arg>action=ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2026-02-15T22:57:47.762416" elapsed="0.639428"/>
+</kw>
+<doc>Köper biljett och klickar OK på Alert-rutan.</doc>
+<status status="PASS" start="2026-02-15T22:57:40.677483" elapsed="7.724361"/>
+</kw>
+<kw name="And User is on the Safari Booking page" owner="safari_keywords">
+<kw name="Navigate To Section" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=${nav_id}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:48.401844" elapsed="0.429498"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:48.831342" level="INFO">Clicking element 'id=safari-nav'.</msg>
+<arg>id=${nav_id}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:48.831342" elapsed="0.486760"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:57:49.318102" elapsed="0.211327"/>
 </kw>
 <arg>safari-nav</arg>
 <arg>Book Safaris</arg>
-<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.090314"/>
+<status status="PASS" start="2026-02-15T22:57:48.401844" elapsed="1.127585"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=safari-section</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.649438" elapsed="0.019001"/>
+<status status="PASS" start="2026-02-15T22:57:49.529429" elapsed="0.425179"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:04.559124" elapsed="0.109315"/>
+<status status="PASS" start="2026-02-15T22:57:48.401844" elapsed="1.552764"/>
 </kw>
-<kw name="When User clicks the Book button" owner="safari_keywords">
+<kw name="When User enters date &quot;2020-01-01&quot;" owner="safari_keywords" source_name="User enters date &quot;${date}&quot;">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//form[@id='safari-form']//button</arg>
+<arg>id=safari-date</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.669536" elapsed="0.009582"/>
+<status status="PASS" start="2026-02-15T22:57:49.954608" elapsed="0.426384"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//form[@id='safari-form']//button</arg>
+<arg>id=safari-date</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.679118" elapsed="0.272481"/>
+<status status="PASS" start="2026-02-15T22:57:50.380992" elapsed="0.692815"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:51.073807" level="INFO">Typing text '2020-01-01' into text field 'id=safari-date'.</msg>
+<arg>id=safari-date</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:57:51.073807" elapsed="0.635088"/>
+</kw>
+<doc>Fyller i datumfältet. Fungerar för både giltiga och ogiltiga datum.</doc>
+<status status="PASS" start="2026-02-15T22:57:49.954608" elapsed="1.754287"/>
+</kw>
+<kw name="And User clicks the Book button" owner="safari_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-15T22:57:51.708895" level="INFO">${btn} = xpath=//form[@id='safari-form']//button</msg>
+<var>${btn}</var>
+<arg>xpath=//form[@id='safari-form']//button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-15T22:57:51.708895" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:51.708895" elapsed="0.422937"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${btn}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-15T22:57:52.131832" elapsed="0.699317"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:04.951599" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
-<arg>xpath=//form[@id='safari-form']//button</arg>
+<msg time="2026-02-15T22:57:52.831149" level="INFO">Clicking button 'xpath=//form[@id='safari-form']//button'.</msg>
+<arg>${btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:04.951599" elapsed="0.054299"/>
+<status status="PASS" start="2026-02-15T22:57:52.831149" elapsed="1.095883"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:04.669536" elapsed="0.336362"/>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:57:53.929080" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-02-15T22:57:59.309315" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-109.png"&gt;&lt;img src="selenium-screenshot-109.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:57:59.309315" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="FAIL" start="2026-02-15T22:57:53.927032" elapsed="5.382283">Alert not found in 5 seconds.</status>
 </kw>
-<kw name="Then Error message &quot;Please select a date&quot; should be displayed" owner="safari_keywords" source_name="Error message &quot;${expected_text}&quot; should be displayed">
+<arg>Handle Alert</arg>
+<arg>ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-02-15T22:57:53.927032" elapsed="5.382283"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:57:51.708895" elapsed="7.600420"/>
+</kw>
+<kw name="Then Error message &quot;You cannot book a safari for a date in the past.&quot; should be displayed" owner="safari_keywords" source_name="Error message &quot;${expected_text}&quot; should be displayed">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=safari-message</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:57:59.309315" elapsed="0.428135"/>
+</kw>
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:05.129529" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-13T21:00:05.129529" level="FAIL">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</msg>
 <arg>id=safari-message</arg>
 <arg>${expected_text}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="FAIL" start="2026-02-13T21:00:05.005898" elapsed="0.123631">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<status status="PASS" start="2026-02-15T22:57:59.737450" elapsed="0.421532"/>
 </kw>
-<status status="FAIL" start="2026-02-13T21:00:05.005898" elapsed="0.123631">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<status status="PASS" start="2026-02-15T22:57:59.309315" elapsed="0.849667"/>
 </kw>
-<doc>Verifierar att systemet stoppar bokning om datum saknas.</doc>
+<kw name="Close System" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-15T22:58:00.158982" elapsed="2.987018"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:58:00.158982" elapsed="2.987018"/>
+</kw>
+<doc>Negativt test: Försöker boka ett datum i dåtiden (Ogiltigt).</doc>
 <tag>bdd</tag>
 <tag>negative</tag>
 <tag>safari</tag>
-<status status="FAIL" start="2026-02-13T21:00:04.559124" elapsed="0.570405">UnexpectedAlertPresentException: Alert Text: You must be logged in to book a safari.
-Message: Unexpected alert dialog detected. Performed handler "dismiss"
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3322:11
-</status>
+<status status="PASS" start="2026-02-15T22:57:17.278925" elapsed="45.870241"/>
 </test>
-<test id="s1-t3" name="TC-303 Navigate Via Homepage Card" line="26">
+<test id="s1-t3" name="TC-304 Buy Ticket With Negative Quantity" line="33">
+<kw name="Start System" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:03.149166" level="INFO">Opening browser 'firefox' to base url 'file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-15T22:58:03.149166" elapsed="6.457055"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-15T22:58:09.606221" elapsed="0.480989"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-02-15T22:58:10.087210" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome to Jurasstina-Kalle Park</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:58:10.087210" elapsed="0.224898"/>
+</kw>
+<status status="PASS" start="2026-02-15T22:58:03.149166" elapsed="7.162942"/>
+</kw>
 <kw name="Given User is on the Home page" owner="safari_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Home']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:58:10.314260" elapsed="0.437587"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:05.129529" level="INFO">Clicking element 'xpath=//a[text()='Home']'.</msg>
+<msg time="2026-02-15T22:58:10.751847" level="INFO">Clicking element 'xpath=//a[text()='Home']'.</msg>
 <arg>xpath=//a[text()='Home']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-13T21:00:05.129529" elapsed="0.076513"/>
+<status status="PASS" start="2026-02-15T22:58:10.751847" elapsed="0.513463"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=home-section</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:05.206042" elapsed="0.018779"/>
+<status status="PASS" start="2026-02-15T22:58:11.265310" elapsed="0.422267"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-13T21:00:05.730017" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2026-02-15T22:58:12.188042" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-13T21:00:05.229355" elapsed="0.500662"/>
+<status status="PASS" start="2026-02-15T22:58:11.687577" elapsed="0.500465"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:05.129529" elapsed="0.600488"/>
+<status status="PASS" start="2026-02-15T22:58:10.312108" elapsed="1.875934"/>
 </kw>
-<kw name="When User clicks the Safari Card button" owner="safari_keywords">
+<kw name="When User tries to buy ticket with quantity &quot;-1&quot;" owner="safari_keywords" source_name="User tries to buy ticket with quantity &quot;${amount}&quot;">
+<kw name="Navigate To Section" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
+<arg>id=${nav_id}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-13T21:00:05.731776" elapsed="0.014998"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<msg time="2026-02-13T21:00:06.139241" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-13T21:00:06.139241" level="FAIL">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
-assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
-#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
-</msg>
-<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="FAIL" start="2026-02-13T21:00:05.746774" elapsed="0.478576">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
-assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
-#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
-</status>
+<status status="PASS" start="2026-02-15T22:58:12.189072" elapsed="0.419793"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@class='card']//a[@data-section='safari-section']</arg>
+<msg time="2026-02-15T22:58:12.609483" level="INFO">Clicking element 'id=tickets-nav'.</msg>
+<arg>id=${nav_id}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-13T21:00:06.225350" elapsed="0.000000"/>
+<status status="PASS" start="2026-02-15T22:58:12.609483" elapsed="0.477372"/>
 </kw>
-<status status="FAIL" start="2026-02-13T21:00:05.731776" elapsed="0.497427">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
-assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
-#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
-</status>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${section_header}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-15T22:58:13.086855" elapsed="0.208911"/>
 </kw>
-<kw name="Then User should be on the Safari Booking page" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<arg>tickets-nav</arg>
+<arg>Buy Tickets</arg>
+<status status="PASS" start="2026-02-15T22:58:12.189072" elapsed="1.106694"/>
 </kw>
-<kw name="TC-301 Successful Safari Booking (End-to-End)">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=ticket-type</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-15T22:58:13.295766" elapsed="0.417921"/>
 </kw>
-<error>
-<value>[Documentation]</value>
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
-</error>
-<error>
-<value>[Tags]</value>
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
-</error>
-<kw name="Given User is logged in">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:13.713687" level="INFO">Selecting options from selection list 'id=ticket-type' by label Adult.</msg>
+<arg>id=ticket-type</arg>
+<arg>Adult</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:58:13.713687" elapsed="1.861268"/>
 </kw>
-<kw name="And User is on the Safari Booking page" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:15.574955" level="INFO">Selecting options from selection list 'id=ticket-category' by label Regular Ticket.</msg>
+<arg>id=ticket-category</arg>
+<arg>Regular Ticket</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-15T22:58:15.574955" elapsed="1.869035"/>
 </kw>
-<kw name="When User enters a valid date &quot;2025-07-15&quot;" owner="safari_keywords" source_name="User enters a valid date &quot;${date}&quot;">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:17.443990" level="INFO">Typing text '-1' into text field 'id=ticket-quantity'.</msg>
+<arg>id=ticket-quantity</arg>
+<arg>${amount}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:58:17.443990" elapsed="0.660958"/>
 </kw>
-<kw name="And User clicks the Book button" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:18.104948" level="INFO">Clicking button 'xpath=//form[@id='ticket-form']//button'.</msg>
+<arg>xpath=//form[@id='ticket-form']//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-15T22:58:18.104948" elapsed="1.121412"/>
 </kw>
-<kw name="Then Success message &quot;Booking Confirmed&quot; should be displayed" owner="safari_keywords" source_name="Success message &quot;${expected_text}&quot; should be displayed">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<doc>Försöker köpa biljett med vald mängd (t.ex. -1).</doc>
+<status status="PASS" start="2026-02-15T22:58:12.189072" elapsed="7.037288"/>
 </kw>
-<kw name="When User goes to the Shopping Cart" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Then System should reject the ticket purchase" owner="safari_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-02-15T22:58:19.228940" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-02-15T22:58:24.619581" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-110.png"&gt;&lt;img src="selenium-screenshot-110.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-15T22:58:24.619581" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>text=Item added to cart!</arg>
+<arg>action=ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="FAIL" start="2026-02-15T22:58:19.226360" elapsed="5.393221">Alert not found in 5 seconds.</status>
 </kw>
-<kw name="And User clicks Proceed to Checkout" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<msg time="2026-02-15T22:58:24.619581" level="INFO">${success_alert_appeared} = False</msg>
+<var>${success_alert_appeared}</var>
+<arg>Alert Should Be Present</arg>
+<arg>text=Item added to cart!</arg>
+<arg>action=ACCEPT</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-15T22:58:19.226360" elapsed="5.393221"/>
 </kw>
-<kw name="Then The Cart should be empty and order confirmed" owner="safari_keywords">
-<status status="NOT RUN" start="2026-02-13T21:00:06.229203" elapsed="0.000000"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${success_alert_appeared}</arg>
+<arg>Fail</arg>
+<arg>Systemet tillät oss köpa negativa biljetter!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-15T22:58:24.619581" elapsed="0.000000"/>
 </kw>
-<doc>Verifierar navigering via kortet på startsidan.</doc>
-<tag>bdd</tag>
-<tag>navigation</tag>
-<tag>safari</tag>
-<status status="FAIL" start="2026-02-13T21:00:05.129529" elapsed="1.099674">MoveTargetOutOfBoundsException: Message: Move target (436, 1071) is out of bounds of viewport dimensions (1440, 768)
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:521:5
-assertTargetInViewPort@chrome://remote/content/shared/webdriver/Actions.sys.mjs:3170:11
-#assertInViewPort@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:67:17
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:187:42
-</status>
-</test>
+<doc>Kollar att vi INTE får "Added to cart"-rutan (för TC-304).</doc>
+<status status="PASS" start="2026-02-15T22:58:19.226360" elapsed="5.393221"/>
+</kw>
 <kw name="Close System" owner="common" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-13T21:00:06.229203" elapsed="2.900109"/>
+<status status="PASS" start="2026-02-15T22:58:24.619581" elapsed="3.069680"/>
 </kw>
-<status status="PASS" start="2026-02-13T21:00:06.229203" elapsed="2.900109"/>
+<status status="PASS" start="2026-02-15T22:58:24.619581" elapsed="3.069680"/>
 </kw>
+<doc>Negativt test: Försöker köpa -1 biljetter.</doc>
+<tag>bdd</tag>
+<tag>negative</tag>
+<tag>safari</tag>
+<status status="PASS" start="2026-02-15T22:58:03.149166" elapsed="24.540095"/>
+</test>
 <doc>Suite 3: Safari Booking System (BDD).
 Testar bokningsflödet för Safari.</doc>
-<status status="FAIL" start="2026-02-13T20:59:51.575133" elapsed="17.554179"/>
+<status status="PASS" start="2026-02-15T22:56:26.268413" elapsed="121.420848"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="3" skip="0">bdd</stat>
-<stat pass="0" fail="1" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">navigation</stat>
-<stat pass="0" fail="1" skip="0">negative</stat>
-<stat pass="0" fail="1" skip="0">positive</stat>
-<stat pass="0" fail="3" skip="0">safari</stat>
+<stat pass="3" fail="0" skip="0">bdd</stat>
+<stat pass="1" fail="0" skip="0">critical</stat>
+<stat pass="2" fail="0" skip="0">negative</stat>
+<stat pass="1" fail="0" skip="0">positive</stat>
+<stat pass="3" fail="0" skip="0">safari</stat>
 </tag>
 <suite>
-<stat name="Suite3 Safari Bdd" id="s1" pass="0" fail="3" skip="0">Suite3 Safari Bdd</stat>
+<stat name="Suite3 Safari Bdd" id="s1" pass="3" fail="0" skip="0">Suite3 Safari Bdd</stat>
 </suite>
 </statistics>
 <errors>

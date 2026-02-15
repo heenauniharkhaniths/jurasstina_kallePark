@@ -4,13 +4,13 @@ Library    SeleniumLibrary
 *** Variables ***
 ${BROWSER}    chrome
 
-# Här är din specifika sökväg fixad (med framåt-slash för att det ska funka i webbläsaren)
 ${URL}        file:///C:/Users/Sandi/Desktop/lab-testing-auto/jurap.html
 
 *** Keywords ***
 Start System
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Set Selenium Speed    0.2s
     Wait Until Page Contains    Welcome to Jurasstina-Kalle Park
 
 Close System

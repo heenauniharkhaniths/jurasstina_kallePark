@@ -1,75 +1,80 @@
 TEST DESIGN DOCUMENT – SAFARI BOOKING MODULE
 
-Testare: Jad Ibrahim, Modul: Safari Booking System (Svit 3) Datum: 2026-02-11
+Testare: Jad Ibrahim
+Modul: Safari Booking System (Svit 3)
+Datum: 2026-02-14
 1. Identifierad Kritisk Funktionalitet
 
-Jag har ansvarat för att testa Safari-bokningssystemet. Detta är en affärskritisk funktion av följande anledningar:
+Jag ansvarar för att testa Safari-bokningssystemet. Detta är en affärskritisk funktion med följande krav:
 
-    Intäkter (Business Value): Guidade turer är en premiumprodukt. Om bokningen misslyckas förlorar parken betydande intäkter.
+    End-to-End Logik: För att boka en safari måste användaren först ha registrerat sig, loggat in och köpt en inträdesbiljett. Utan biljett får ingen safari bokas.
 
-    Affärslogik: Systemet måste validera att ett datum är valt innan bokning sker för att undvika administrativa fel.
+    Intäkter (Business Value): Guidade turer är en premiumprodukt. Om bokningsflödet (från biljett till safari) misslyckas, förlorar parken intäkter.
 
-    Användarkrav: Bokning får endast göras av inloggade användare.
+    Datavalidering: Systemet måste blockera ogiltiga datum (t.ex. datum i dåtiden) och ogiltiga biljettantal (t.ex. negativa tal).
 
 2. Teststrategi & Verktyg
 
-För att testa denna modul har jag använt Behavior Driven Development (BDD).
+För att testa denna modul har jag använt Behavior Driven Development (BDD) och en modulär struktur.
 
-    Metod: Gherkin-syntax (Given/When/Then) används för att tydligt beskriva beteendet ur användarens perspektiv.
+    Metod: Gherkin-syntax (Given/When/Then) används för att beskriva flödet.
+
+    Arkitektur: Testerna använder delade resursfiler (login_keywords.resource, register_keywords.resource, safari_keywords.resource) för att återanvända kod och minska underhåll.
 
     Verktyg: Robot Framework med SeleniumLibrary.
 
-    Webbläsare: Jag använder firefox så Testerna är verifierade i Firefox.
+    Webbläsare: Firefox (optimerad med Set Selenium Speed för stabilitet).
 
 3. Testfall (Test Cases)
 
-Här är de tre testfall som implementerats i filen suite3_safari_bdd.robot.
-
+Följande tre testfall är implementerade i suite3_safari_bdd.robot:
 Test ID	Testfall	Typ	Beskrivning & Gherkin-scenario
-TC-301	Successful Safari Booking	Positive / Critical	
+TC-301	Successful Safari Booking (E2E)	Critical / Positive	
 
-Verifierar att en inloggad användare kan boka en tur.
+Verifierar hela flödet: Registrering -> Login -> Köp av biljett -> Bokning av safari.
 
 
-GIVEN User is logged in
+GIVEN User creates account and logs in
 
-AND User is on the Safari Booking page
+AND User buys an entrance ticket
 
-WHEN User enters a valid date "2025-07-15"
+WHEN User enters a valid date "2026-03-02"
+
+AND User clicks the Book button
 
 THEN Success message "Booking Confirmed" should be displayed.
-TC-302	Missing Date Validation	Negative	
+TC-302	Booking With Past Date	Negative	
 
-Verifierar att systemet stoppar bokningar utan datum.
+Verifierar att systemet stoppar bokningar med datum i dåtiden.
 
 
-GIVEN User is logged in
+GIVEN User creates account and logs in
 
-WHEN User clicks the Book button without entering a date
+AND User buys an entrance ticket
 
-THEN Error message "Please select a date" should be displayed.
-TC-303	Navigation via Homepage	UX / Navigation	
+WHEN User enters date "2020-01-01"
 
-Verifierar navigering via "Call-to-Action"-kortet på startsidan.
+THEN Error message "You cannot book a safari for a date in the past." should be displayed.
+TC-304	Buy Ticket With Negative Quantity	Negative	
+
+Verifierar att man inte kan köpa ett negativt antal biljetter.
 
 
 GIVEN User is on the Home page
 
-WHEN User clicks the Safari Card button
+WHEN User tries to buy ticket with quantity "-1"
 
-THEN User should be on the Safari Booking page.
-
-
+THEN System should reject the ticket purchase.
 4. Användarflöde & Persona
 
 Testerna är designade utifrån personan "Safari-Sven".
 
-    Scenario: Sven vill boka en tur men glömmer ofta att fylla i alla fält.
+    Scenario: Sven är en ny besökare som vill boka allt på en gång, men han gör ofta felinmatningar.
 
     Testets syfte:
 
-        Säkerställa att Sven tvingas logga in om han inte är det (Hanteras i Given-steget).
+        Säkerställa att Sven kan registrera sig och köpa nödvändig inträdesbiljett smidigt (TC-301).
 
-        Säkerställa att Sven får tydlig feedback (felmeddelande) om han glömmer datumet (TC-302).
+        Skydda systemet om Sven råkar välja ett gammalt datum (TC-302).
 
-        Bekräfta bokningen när han gör rätt (TC-301).
+        Skydda systemet om Sven försöker "lura" varukorgen genom att köpa -1 biljetter (TC-304).
