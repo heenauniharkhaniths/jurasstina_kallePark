@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-16T00:46:03.168009" rpa="false" schemaversion="5">
+<suite id="s1" name="Homepage" source="C:\Users\ronal\PycharmProjects\jurap.test\test\homepage.robot">
+<test id="s1-t1" name="Verifiera Startsidan" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-16T00:46:03.398641" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-16T00:46:03.398317" elapsed="0.809707"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-16T00:46:04.210193" elapsed="0.382487"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-02-16T00:46:14.884974" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-16T00:46:14.885374" level="FAIL">Text 'Jurastina' did not appear in 10 seconds.</msg>
+<arg>Jurastina</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-02-16T00:46:04.594030" elapsed="10.296422">Text 'Jurastina' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-02-16T00:46:14.891247" elapsed="0.000097"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-02-16T00:46:14.891924" elapsed="0.000088"/>
+</kw>
+<status status="FAIL" start="2026-02-16T00:46:03.397217" elapsed="11.495492">Text 'Jurastina' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t2" name="Verifiera Navigation" line="17">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-16T00:46:14.895979" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-16T00:46:14.895440" elapsed="1.672931"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-16T00:46:16.568944" elapsed="0.050355"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-16T00:46:16.619923" elapsed="0.093176"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-16T00:46:16.714550" level="INFO">Clicking element 'xpath=(//a)[1]'.</msg>
+<arg>xpath=(//a)[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-16T00:46:16.713850" elapsed="0.230732"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-16T00:46:18.947219" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-16T00:46:16.945366" elapsed="2.002045"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-02-16T00:46:19.164590" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-02-16T00:46:18.947882" elapsed="0.216869"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-16T00:46:19.165177" elapsed="2.382991"/>
+</kw>
+<status status="PASS" start="2026-02-16T00:46:14.894453" elapsed="6.655077"/>
+</test>
+<status status="FAIL" start="2026-02-16T00:46:03.169703" elapsed="18.383378"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Homepage" id="s1" pass="1" fail="1" skip="0">Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
