@@ -43,7 +43,7 @@ TC5 regularUserLogin valid
 
 AdminLogin Valid
     [Template]    Login And Logout Template
-    rex999    rexpass
+    admin999    adminpass
 
 TC6 registrationForm
     Click Link    xpath://*[@id="register-nav"]/a
@@ -62,18 +62,14 @@ TC7 Check Dino Alerts
     ${alert_count}=    Get Length    ${alerts}
     Log    Found ${alert_count} alert(s)
 
-TC8 dropdownTest
-    Click Link    xpath://*[@id="tickets-nav"]/a
-    Select From List By Label    id:ticket-type    Senior
-    Sleep    3s
-    Click Element    id:ticket-category
+TC8 Login-Empty-Fields
+    [Tags]    VG-HK
+    Click Link    xpath://*[@id="login-nav"]/a
+    Wait Until Element Is Visible    id:login-username    10s
 
-    Wait Until Element Is Visible    id:ticket-category   15s
-    Select From List By Label  id:ticket-category   Regular Ticket
+    Click Button    xpath://*[@id="login-form"]/button
     Sleep    3s
-    Clear Element Text    id:ticket-quantity
-    Input Text    id:ticket-quantity    5
-    Click Button    xpath://*[@id="ticket-form"]/button
+    Element Should Be Visible    id:login-username
 
 *** Keywords ***
 invalidusername
