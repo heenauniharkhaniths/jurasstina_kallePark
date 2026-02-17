@@ -9,7 +9,7 @@ ${BROWSER}    chrome
 Verifiera Startsidan
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Wait Until Page Contains    Jurastina    timeout=10s
+    Wait Until Page Contains    Jurasstina    timeout=10s
     Capture Page Screenshot
     Close Browser
 

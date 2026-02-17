@@ -1,67 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-14T20:16:19.393593" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-16T11:56:02.028033" rpa="false" schemaversion="5">
 <suite id="s1" name="jurasstina kallePark" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark">
-<suite id="s1-s1" name="Test" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark\test">
-<suite id="s1-s1-s1" name="Login Suite" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark\test\login_suite.robot">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2026-02-14T20:16:19.579636" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
-<arg>http://127.0.0.1:8000/jurap.html</arg>
-<arg>chrome</arg>
+<suite id="s1-s1" name="Homepage" source="C:\Users\Lenovo-P14s\PycharmProjects\jurasstina_kallePark\homepage.robot">
+<test id="s1-s1-t1" name="Verifiera Startsidan" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-16T11:56:02.321194" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/jurap.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-14T20:16:19.579227" elapsed="1.465299"/>
+<status status="PASS" start="2026-02-16T11:56:02.320756" elapsed="0.807131"/>
 </kw>
-<test id="s1-s1-s1-t1" name="TC1 TestingInputBoxes" line="10">
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2026-02-14T20:16:21.047553" level="INFO">Clicking link 'xpath://*[@id="login-nav"]/a'.</msg>
-<arg>xpath://*[@id="login-nav"]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-14T20:16:21.047028" elapsed="0.063911"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-16T11:56:03.128287" elapsed="0.051209"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-14T20:16:21.131450" level="INFO">Element 'id:login-username' is displayed.</msg>
-<arg>id:login-username</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-14T20:16:21.111199" elapsed="0.020532"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Jurasstina</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-16T11:56:03.179722" elapsed="0.012190"/>
 </kw>
-<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>id:login-username</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-14T20:16:21.131928" elapsed="0.018457"/>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-02-16T11:56:03.481367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-02-16T11:56:03.192125" elapsed="0.289595"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-14T20:16:26.151452" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-14T20:16:21.150587" elapsed="5.001760"/>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-16T11:56:03.481944" elapsed="2.115891"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-14T20:16:26.178200" level="INFO">Element 'id:login-password' is displayed.</msg>
-<arg>id:login-password</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-14T20:16:26.152910" elapsed="0.025554"/>
-</kw>
-<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>id:login-password</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-14T20:16:26.178673" elapsed="0.036772"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-14T20:16:29.217122" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-14T20:16:26.215807" elapsed="3.002526"/>
-</kw>
-<status status="PASS" start="2026-02-14T20:16:21.044801" elapsed="8.174634"/>
+<status status="PASS" start="2026-02-16T11:56:02.318456" elapsed="3.279791"/>
 </test>
-<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-02-14T20:16:29.225821" elapsed="2.153151"/>
-</kw>
-<status status="PASS" start="2026-02-14T20:16:19.428415" elapsed="11.950806"/>
+<status status="PASS" start="2026-02-16T11:56:02.070772" elapsed="3.530706"/>
 </suite>
-<status status="PASS" start="2026-02-14T20:16:19.426431" elapsed="11.956257"/>
-</suite>
-<status status="PASS" start="2026-02-14T20:16:19.398524" elapsed="11.986788"/>
+<status status="PASS" start="2026-02-16T11:56:02.034679" elapsed="3.569978"/>
 </suite>
 <statistics>
 <total>
@@ -71,8 +43,7 @@
 </tag>
 <suite>
 <stat name="jurasstina kallePark" id="s1" pass="1" fail="0" skip="0">jurasstina kallePark</stat>
-<stat name="Test" id="s1-s1" pass="1" fail="0" skip="0">jurasstina kallePark.Test</stat>
-<stat name="Login Suite" id="s1-s1-s1" pass="1" fail="0" skip="0">jurasstina kallePark.Test.Login Suite</stat>
+<stat name="Homepage" id="s1-s1" pass="1" fail="0" skip="0">jurasstina kallePark.Homepage</stat>
 </suite>
 </statistics>
 <errors>
